@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PassForge — Password Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-tag">v2.0 — Secure</div>
+      <h1>Pass<span>Forge</span></h1>
+      <p class="subtitle">Generate cryptographically strong passwords</p>
+    </header>
+
+    <div class="card">
+
+      <div class="password-display" id="pwDisplay">
+        <span class="password-text password-placeholder" id="pwText">Click generate to begin</span>
+        <button class="copy-btn" id="copyBtn" title="Copy to clipboard">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="9" y="9" width="13" height="13" rx="2"/>
+            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="strength-row" id="strengthRow">
+        <span class="strength-label" id="strengthLabel">—</span>
+        <div class="strength-bars" id="strengthBars">
+          <div class="strength-bar"></div>
+          <div class="strength-bar"></div>
+          <div class="strength-bar"></div>
+          <div class="strength-bar"></div>
+        </div>
+      </div>
+
+      <div class="section-label">Length</div>
+      <div class="length-row">
+        <span class="length-value" id="lenDisplay">16</span>
+        <input type="range" id="lengthSlider" min="6" max="64" value="16">
+      </div>
+
+      <div class="section-label" style="margin-bottom:10px">Character types</div>
+      <div class="options-grid">
+        <div class="toggle-option active" id="opt-upper">
+          <div>
+            <div class="toggle-label">Uppercase</div>
+            <div class="toggle-sub">A–Z</div>
+          </div>
+          <div class="toggle-switch"></div>
+        </div>
+        <div class="toggle-option active" id="opt-lower">
+          <div>
+            <div class="toggle-label">Lowercase</div>
+            <div class="toggle-sub">a–z</div>
+          </div>
+          <div class="toggle-switch"></div>
+        </div>
+        <div class="toggle-option active" id="opt-numbers">
+          <div>
+            <div class="toggle-label">Numbers</div>
+            <div class="toggle-sub">0–9</div>
+          </div>
+          <div class="toggle-switch"></div>
+        </div>
+        <div class="toggle-option" id="opt-symbols">
+          <div>
+            <div class="toggle-label">Symbols</div>
+            <div class="toggle-sub">!@#$%^&*</div>
+          </div>
+          <div class="toggle-switch"></div>
+        </div>
+      </div>
+
+      <button class="generate-btn" id="generateBtn">
+        <span class="btn-icon">⚡</span> Generate Password
+      </button>
+
+    </div>
+
+    <div class="card-footer">
+      <span>Entropy: <span id="entropyDisplay">—</span></span>
+      <span id="footerStatus">Ready</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
